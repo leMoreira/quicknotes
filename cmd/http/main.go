@@ -15,6 +15,8 @@ func noteList(w http.ResponseWriter, r *http.Request) {
 
 	t, err := template.ParseFiles(files...)
 	if err != nil {
+
+		fmt.Println(err) //é uma boa prática sempre logar o erro em alguma camada.
 		http.Error(w, "Aconteceu um erro ao executar essa página", http.StatusInternalServerError)
 		return
 	}
